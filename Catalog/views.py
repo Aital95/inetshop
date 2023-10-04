@@ -14,4 +14,5 @@ def product_detail(request, product_id):
 
 
 def home(request):
-    return render(request, 'Catalog/home.html')
+    products = Product.objects.all()
+    return render(request, 'Catalog/home.html', {'products': products})
